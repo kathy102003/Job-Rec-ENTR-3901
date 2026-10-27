@@ -21,7 +21,8 @@ end_date = st.sidebar.date_input("End Date", today)
 # Fetch data
 @st.cache_data
 def load_data(ticker, start, end):
-    data = yf.download(ticker, start=start, end=end)
+    # Added multi_level_index=False to keep the dataframe format simple and flat
+    data = yf.download(ticker, start=start, end=end, multi_level_index=False)
     return data
 
 try:
