@@ -4,4 +4,6 @@ requests
 numpy
 scikit-learn
 pypdf
+streamlit
 yfinance
+plotly
