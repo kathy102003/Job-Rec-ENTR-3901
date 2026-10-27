@@ -26,7 +26,7 @@ def load_data(ticker, start, end):
 
 try:
     df = load_data(ticker_symbol, start_date, end_date)
-    
+
     if df.empty:
         st.error("No data found for the selected date range.")
     else:
@@ -55,7 +55,7 @@ try:
             name='S&P 500 Close',
             line=dict(color='#008080', width=2)
         ))
-        
+
         fig.update_layout(
             xaxis_title="Date",
             yaxis_title="Close Price (USD)",
@@ -67,10 +67,10 @@ try:
             yaxis=dict(showgrid=True, gridcolor='rgba(200,200,200,0.3)')
         )
         st.plotly_chart(fig, use_container_width=True)
-        
+
         # Show Raw Data option
         if st.checkbox("Show Raw Data Table"):
             st.write(df)
-            
+
 except Exception as e:
     st.error(f"An error occurred while fetching data: {e}")
